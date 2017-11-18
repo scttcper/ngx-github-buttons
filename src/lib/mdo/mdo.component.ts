@@ -2,7 +2,7 @@
 import { Component, OnChanges, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { ButtonService } from './mdo.service';
+import { MdoButtonService } from './mdo.service';
 
 @Component({
   selector: 'mdo-github-button',
@@ -168,41 +168,50 @@ export class MdoGithubButtonComponent implements OnChanges {
   counterHref: string;
   counter: number;
   counterLabel: string;
+  countAttr: string;
   loaded = false;
-  constructor(private buttonService: ButtonService) {}
+  constructor(private buttonService: MdoButtonService) {}
 
   ngOnChanges() {
     this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/';
-    if (this.count && this.user) {
-      this.fetch();
-    }
     this.mainButton['github-btn-large'] = this.size === 'large';
     // Add the class, change the text label, set count link href
     switch (this.type) {
       case 'watch':
         this.mainButton['github-watchers'] = true;
         this.text = 'Watch';
+        this.countAttr = 'subscribers_count';
         this.counterHref =
           'https://github.com/' + this.user + '/' + this.repo + '/watchers';
         break;
       case 'star':
         this.mainButton['github-stargazers'] = true;
         this.text = 'Star';
+        this.counterLabel = ' stargazers';
+        this.countAttr = 'stargazers_count';
+        this.counterLabel = ' watchers';
         this.counterHref =
           'https://github.com/' + this.user + '/' + this.repo + '/stargazers';
         break;
       case 'fork':
         this.mainButton['github-forks'] = true;
         this.text = 'Fork';
+        this.counterLabel = ' forks';
+        this.countAttr = 'network_count';
         this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/fork';
         this.counterHref = 'https://github.com/' + this.user + '/' + this.repo + '/network';
         break;
       case 'follow':
         this.mainButton['github-me'] = true;
         this.text = 'Follow @' + this.user;
+        this.counterLabel = ' followers';
+        this.countAttr = 'followers';
         this.buttonHref = 'https://github.com/' + this.user;
         this.counterHref = 'https://github.com/' + this.user + '/followers';
         break;
+    }
+    if (this.count && this.user) {
+      this.fetch();
     }
   }
   fetch() {
@@ -222,24 +231,7 @@ export class MdoGithubButtonComponent implements OnChanges {
     );
   }
   callback(data: any) {
-    switch (this.type) {
-      case 'watch':
-        this.counter = data.subscribers_count;
-        this.counterLabel = ' watchers';
-        break;
-      case 'star':
-        this.counter = data.stargazers_count;
-        this.counterLabel = ' stargazers';
-        break;
-      case 'fork':
-        this.counter = data.network_count;
-        this.counterLabel = ' forks';
-        break;
-      case 'follow':
-        this.counter = data.followers;
-        this.counterLabel = ' followers';
-        break;
-    }
+    this.counter = data[this.countAttr];
     this.loaded = true;
   }
 }

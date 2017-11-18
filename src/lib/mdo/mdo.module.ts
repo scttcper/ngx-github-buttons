@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MdoGithubButtonComponent } from './mdo.component';
-import { ButtonService } from './mdo.service';
+import { MdoButtonService } from './mdo.service';
 
 @NgModule({
   imports: [
@@ -12,6 +12,6 @@ import { ButtonService } from './mdo.service';
   ],
   exports: [MdoGithubButtonComponent],
   declarations: [MdoGithubButtonComponent],
-  providers: [ButtonService],
+  providers: [MdoButtonService],
 })
 export class MdoButtonModule { }

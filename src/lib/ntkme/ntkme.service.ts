@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class MdoButtonService {
+export class NtkmeButtonService {
   constructor(private httpClient: HttpClient) { }
   user(user: string) {
     return this.httpClient
