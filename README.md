@@ -40,11 +40,11 @@ or
 ### API
 | Input        | Type    | default | Description                                                        |
 | ------------ | ------- | ------- | ------------------------------------------------------------------ |
-| user         | string  | none    | user or org                                                        |
-| repo         | string  | none    | repository name                                                    |
+| user         | string  |         | user or org                                                        |
+| repo         | string  |         | repository name                                                    |
 | type         | string  | `star`  | `star`, `follow`, `watch`, `fork`. ntkme only: `issue`, `download` |
 | count        | boolean | `false` | show count of stars, issues, followers etc.                        |
-| size         | string  | `none`  | pass `'large'` for a bigger size button                            |
+| size         | string  | `'none'`| `'large'` for a bigger size button                                 |
 | standardIcon | boolean | `false` | ntkme only: use the github logo instead of other icons             |
 
 
