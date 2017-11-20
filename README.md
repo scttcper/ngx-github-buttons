@@ -1,27 +1,54 @@
-# NgxGithubButtons
+# Angular GitHub Buttons
+GitHub buttons without the iframe, rewritten in angular.  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+Choose from two styles:  
+- ntkme: https://buttons.github.io/  
+- mdo: https://ghbtns.com/  
 
-## Development server
+### Demo
+https://typectrl.github.io/ngx-github-buttons/  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Install
+```sh
+npm i @ctrl/ngx-github-buttons
+```
 
-## Code scaffolding
+### Use
+Import the component
+```ts
+import { NtkmeButtonModule } from '@ctrl/ngx-github-buttons';
+// or
+import { MdoButtonModule } from '@ctrl/ngx-github-buttons';
+``` 
+Use the component
+```html
+<ntkme-github-button
+  user="angular"
+  repo="angular"
+  >
+</ntkme-github-button>
+```  
+or  
+```html
+<mdo-github-button
+  user="angular"
+  repo="angular"
+  >
+</mdo-github-button>
+```  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### API
+| Input        | Type    | default | Description                                                        |
+| ------------ | ------- | ------- | ------------------------------------------------------------------ |
+| user         | string  | none    | user or org                                                        |
+| repo         | string  | none    | repository name                                                    |
+| type         | string  | `star`  | `star`, `follow`, `watch`, `fork`. ntkme only: `issue`, `download` |
+| count        | boolean | `false` | show count of stars, issues, followers etc.                        |
+| size         | string  | `none`  | pass `'large'` for a bigger size button                            |
+| standardIcon | boolean | `false` | ntkme only: use the github logo instead of other icons             |
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### License
+Compilicated. This project is MIT licensed, but each set of buttons have their own license which must be respected.
+The mdo buttons are Licensed [Apache 2](https://github.com/mdo/github-buttons/blob/master/LICENSE.md)  
+The ntkme buttons are Licensed [BSD 2-clause](https://github.com/ntkme/github-buttons/blob/master/LICENSE.md)  

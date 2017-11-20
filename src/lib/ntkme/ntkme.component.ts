@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { NtkmeButtonService } from './ntkme.service';
+import { ButtonService } from '../button.service';
 
 const svg = {
   follow: {
@@ -50,12 +50,12 @@ const svg = {
 @Component({
   selector: 'ntkme-github-button',
   template: `
-  <div [class.large]="this.size === 'large'">
-    <a [href]="buttonHref" class="btn" [attr.aria-label]="buttonAria">
+  <div [class.gh-large]="this.size === 'large'">
+    <a [href]="buttonHref" class="gh-btn" [attr.aria-label]="buttonAria">
       <svg version="1.1"
         [attr.width]="svg.width" [attr.height]="svg.height"
         [attr.viewBox]="'0 0 ' + svg.width + ' ' + svg.height"
-        class="octicon" aria-hidden="true">
+        class="gh-octicon" aria-hidden="true">
         <path fill-rule="evenodd" [attr.d]="svg.path"></path>
       </svg>
       <span> {{ text }}</span>
@@ -76,13 +76,10 @@ const svg = {
     text-decoration: none;
     outline: 0;
   }
-  .btn,
+  .gh-btn,
   .social-count {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
       Arial, sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     display: inline-block;
     font-weight: 600;
@@ -91,40 +88,26 @@ const svg = {
     border: 1px solid #d1d2d3;
     border-radius: 0.25em;
   }
-  .btn:focus,
+  .gh-btn:focus,
   .social-count:focus {
     border-color: #c8e1ff;
   }
-  .btn {
+  .gh-btn {
     background-color: #eff3f6;
-    background-image: -webkit-linear-gradient(top, #fafbfc, #e4ebf0);
-    background-image: -moz-linear-gradient(top, #fafbfc, #e4ebf0);
     background-image: linear-gradient(to bottom, #fafbfc, #e4ebf0);
     background-repeat: repeat-x;
     background-size: 110% 110%;
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFBFC', endColorstr='#FFE4EBF0')";
-    *filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr='#FFFAFBFC',
-      endColorstr='#FFE4EBF0'
-    );
   }
-  .btn:active {
+  .gh-btn:active {
     background-color: #e9ecef;
     background-image: none;
     border-color: #afb1b2;
     box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
   }
-  .btn:hover {
+  .gh-btn:hover {
     background-color: #e6ebf1;
-    background-image: -webkit-linear-gradient(top, #f0f3f6, #dce3ec);
-    background-image: -moz-linear-gradient(top, #f0f3f6, #dce3ec);
     background-image: linear-gradient(to bottom, #f0f3f6, #dce3ec);
     border-color: #afb1b2;
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0F3F6', endColorstr='#FFDCE3EC')";
-    *filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr='#FFF0F3F6',
-      endColorstr='#FFDCE3EC'
-    );
   }
   .social-count {
     position: relative;
@@ -133,51 +116,51 @@ const svg = {
   .social-count:hover {
     color: #0366d6;
   }
-  .octicon {
+  .gh-octicon {
     position: relative;
     display: inline-block;
     fill: currentColor;
   }
-  .btn,
+  .gh-btn,
   .social-count {
     height: 20px;
     padding: 0 5px;
     line-height: 18px;
   }
-  .btn span,
+  .gh-btn span,
   .social-count span {
     vertical-align: 1px;
   }
-  .btn {
+  .gh-btn {
     font-size: 11px;
   }
   .social-count {
     margin-left: 5px;
     font-size: 10px;
   }
-  .octicon {
+  .gh-octicon {
     height: 14px;
     top: 2px;
   }
-  .large .btn,
-  .large .social-count {
+  .gh-large .gh-btn,
+  .gh-large .social-count {
     height: 26px;
     line-height: 26px;
   }
-  .large .btn span,
-  .large .social-count span {
+  .gh-large .gh-btn span,
+  .gh-large .social-count span {
     vertical-align: 0;
   }
-  .large .btn {
+  .gh-large .gh-btn {
     padding: 0 10px;
     font-size: 12px;
   }
-  .large .social-count {
+  .gh-large .social-count {
     padding: 0 7px;
     margin-left: 7px;
     font-size: 11px;
   }
-  .large .octicon {
+  .gh-large .gh-octicon {
     height: 16px;
     top: 4px;
   }
@@ -212,8 +195,8 @@ const svg = {
     _border-left-color: red !important;
     _filter: chroma(color=red);
   }
-  .large .social-count b,
-  .large .social-count i {
+  .gh-large .social-count b,
+  .gh-large .social-count i {
     margin-top: -6px;
     border-width: 6px;
   }
@@ -243,7 +226,7 @@ export class NtkmeButtonComponent implements OnChanges {
   counterLabel: string;
   countAttr: string;
   loaded = false;
-  constructor(private buttonService: NtkmeButtonService) {}
+  constructor(private buttonService: ButtonService) {}
 
   ngOnChanges() {
     const iconType = this.standardIcon ? 'follow' : this.type;

@@ -2,7 +2,7 @@
 import { Component, OnChanges, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { MdoButtonService } from './mdo.service';
+import { ButtonService } from '../button.service';
 
 @Component({
   selector: 'mdo-github-button',
@@ -170,7 +170,7 @@ export class MdoGithubButtonComponent implements OnChanges {
   counterLabel: string;
   countAttr: string;
   loaded = false;
-  constructor(private buttonService: MdoButtonService) {}
+  constructor(private buttonService: ButtonService) {}
 
   ngOnChanges() {
     this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/';

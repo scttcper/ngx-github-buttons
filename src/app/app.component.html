@@ -183,19 +183,23 @@
           >
         </ntkme-github-button>
       </div>
+      <p>Import the component</p>
       <div class="form-group">
-        <textarea rows="2" readonly="readonly" class="form-control"></textarea>
+        <pre>import {{ '{' }} <ng-template [ngIf]="style === 'ntkme'">NtkmeButtonModule</ng-template><ng-template [ngIf]="style === 'mdo'">MdoButtonModule</ng-template> {{ '}' }} from '@ctrl/ngx-github-buttons';
+        </pre>
       </div>
+      <p>Use the component</p>
       <div class="form-group">
-        <textarea rows="2" readonly="readonly" class="form-control"></textarea>
+        <pre><ng-template [ngIf]="style === 'ntkme'">&lt;ntkme-github-button</ng-template><ng-template [ngIf]="style === 'mdo'">&lt;mdo-github-button</ng-template><ng-template [ngIf]="size === 'large'">
+  size="{{ size }}"</ng-template><ng-template [ngIf]="count">
+  count="{{ count }}"</ng-template>
+  user="{{ user || 'angular' }}"<ng-template [ngIf]="type !== 'follow'">
+  repo="{{ repo || 'angular' }}"</ng-template><ng-template [ngIf]="style === 'ntkme' && standardIcon">
+  standardIcon="true"</ng-template>
+  <ng-template [ngIf]="type !== 'star'">type="{{ type }}"</ng-template>>
+<ng-template [ngIf]="style === 'ntkme'">&lt;/ntkme-github-button></ng-template><ng-template [ngIf]="style === 'mdo'">&lt;/mdo-github-button></ng-template>
+        </pre>
       </div>
     </div>
   </div>
 </div>
-<!-- <mdo-github-button
-  user="scttcper"
-  repo="ngx-toastr"
-  size="large"
-  type="star"
-  count="true"
-> -->
