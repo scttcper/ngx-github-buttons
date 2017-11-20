@@ -8,7 +8,8 @@ import { ButtonService } from '../button.service';
   selector: 'mdo-github-button',
   template: `
   <div [ngClass]="mainButton">
-    <a class="gh-btn" [href]="buttonHref" target="_blank" [attr.aria-label]="text + labelSuffix">
+    <a class="gh-btn" [href]="buttonHref" target="_blank"
+      [attr.aria-label]="text + ' on GitHub'">
       <span class="gh-ico" aria-hidden="true"></span>
       <span class="gh-text">{{ text }}</span>
     </a>

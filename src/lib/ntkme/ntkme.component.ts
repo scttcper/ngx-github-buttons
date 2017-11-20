@@ -51,7 +51,8 @@ const svg = {
   selector: 'ntkme-github-button',
   template: `
   <div [class.gh-large]="this.size === 'large'">
-    <a [href]="buttonHref" class="gh-btn" [attr.aria-label]="buttonAria">
+    <a [href]="buttonHref" class="gh-btn"
+      [attr.aria-label]="text + ' on GitHub'">
       <svg version="1.1"
         [attr.width]="svg.width" [attr.height]="svg.height"
         [attr.viewBox]="'0 0 ' + svg.width + ' ' + svg.height"

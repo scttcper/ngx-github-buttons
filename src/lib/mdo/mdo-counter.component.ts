@@ -5,7 +5,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   template: `
   <a class="gh-count" [class.github-btn-large]="large"
     [href]="counterHref" target="_blank"
-    [attr.aria-label]="(count | number) + counterLabel + labelSuffix"
+    [attr.aria-label]="(count | number) + counterLabel + ' on GitHub'"
     >
     {{ count | number }}
   </a>
@@ -83,5 +83,4 @@ export class MdoCounterComponent {
   @Input() count: number;
   @Input() counterLabel: string;
   @Input() counterHref: string;
-  labelSuffix = ' on GitHub';
 }

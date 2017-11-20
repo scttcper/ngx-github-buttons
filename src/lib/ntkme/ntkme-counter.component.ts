@@ -8,7 +8,7 @@ import {
   selector: 'ntkme-counter',
   template: `
   <a class="social-count" [class.gh-large]="large" [href]="counterHref"
-    [attr.aria-label]="(count | number) + counterLabel + labelSuffix">
+    [attr.aria-label]="(count | number) + counterLabel + ' on GitHub'">
     <b></b>
     <i></i>
     <span>{{ count | number }}</span>
@@ -89,5 +89,4 @@ export class NtkmeCounterComponent {
   @Input() count: number;
   @Input() counterLabel: string;
   @Input() counterHref: string;
-  labelSuffix = ' on GitHub';
 }

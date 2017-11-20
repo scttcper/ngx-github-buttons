@@ -1,7 +1,6 @@
-
 {
   "name": "@ctrl/ngx-github-buttons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GitHub Buttons for Angular",
   "main": "./index.umd.js",
   "module": "./index.es5.js",
