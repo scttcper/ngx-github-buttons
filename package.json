@@ -1,5 +1,5 @@
 {
-  "name": "ngx-github-buttons",
+  "name": "@ctrl/ngx-github-buttons",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
