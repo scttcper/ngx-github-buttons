@@ -60,24 +60,21 @@ const svg = {
       </svg>
       <span> {{ text }}</span>
     </a>
-    <a *ngIf="count && loaded" class="social-count"
-      [href]="countHref"
-      [attr.aria-label]="(counter | number) + counterLabel + labelSuffix">
-      <b></b>
-      <i></i>
-      <span>{{ counter | number }}</span>
-    </a>
+    <ntkme-counter *ngIf="count && loaded"
+      [count]="counter"
+      [large]="this.size === 'large'"
+      [counterLabel]="counterLabel"
+      [counterHref]="counterHref"
+    ></ntkme-counter>
   </div>
   `,
-  styles: [
-    `
+  styles: [`
   a {
     color: #24292e;
     text-decoration: none;
     outline: 0;
   }
-  .gh-btn,
-  .social-count {
+  .gh-btn {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
       Arial, sans-serif;
     user-select: none;
@@ -87,16 +84,17 @@ const svg = {
     cursor: pointer;
     border: 1px solid #d1d2d3;
     border-radius: 0.25em;
-  }
-  .gh-btn:focus,
-  .social-count:focus {
-    border-color: #c8e1ff;
-  }
-  .gh-btn {
     background-color: #eff3f6;
     background-image: linear-gradient(to bottom, #fafbfc, #e4ebf0);
     background-repeat: repeat-x;
     background-size: 110% 110%;
+    height: 20px;
+    padding: 0 5px;
+    line-height: 18px;
+    font-size: 11px;
+  }
+  .gh-btn:focus {
+    border-color: #c8e1ff;
   }
   .gh-btn:active {
     background-color: #e9ecef;
@@ -109,99 +107,30 @@ const svg = {
     background-image: linear-gradient(to bottom, #f0f3f6, #dce3ec);
     border-color: #afb1b2;
   }
-  .social-count {
-    position: relative;
-    background-color: #fff;
-  }
-  .social-count:hover {
-    color: #0366d6;
-  }
   .gh-octicon {
     position: relative;
     display: inline-block;
     fill: currentColor;
-  }
-  .gh-btn,
-  .social-count {
-    height: 20px;
-    padding: 0 5px;
-    line-height: 18px;
-  }
-  .gh-btn span,
-  .social-count span {
-    vertical-align: 1px;
-  }
-  .gh-btn {
-    font-size: 11px;
-  }
-  .social-count {
-    margin-left: 5px;
-    font-size: 10px;
-  }
-  .gh-octicon {
     height: 14px;
     top: 2px;
   }
-  .gh-large .gh-btn,
-  .gh-large .social-count {
-    height: 26px;
-    line-height: 26px;
-  }
-  .gh-large .gh-btn span,
-  .gh-large .social-count span {
-    vertical-align: 0;
+  .gh-btn span {
+    vertical-align: 1px;
   }
   .gh-large .gh-btn {
+    height: 26px;
+    line-height: 26px;
     padding: 0 10px;
     font-size: 12px;
   }
-  .gh-large .social-count {
-    padding: 0 7px;
-    margin-left: 7px;
-    font-size: 11px;
+  .gh-large .gh-btn span {
+    vertical-align: 0;
   }
   .gh-large .gh-octicon {
     height: 16px;
     top: 4px;
   }
-  .social-count b,
-  .social-count i {
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    display: block;
-    width: 0;
-    height: 0;
-    margin-top: -4px;
-    _font-size: 0;
-    _line-height: 0;
-    border: 4px solid transparent;
-  }
-  .social-count b {
-    margin-right: 0;
-    border-right-color: #d1d2d3;
-  }
-  .social-count:focus b {
-    border-right-color: #c8e1ff;
-  }
-  .social-count i {
-    margin-right: -1.5px;
-    border-right-color: #fff;
-  }
-  .social-count b,
-  .social-count i {
-    _border-top-color: red !important;
-    _border-bottom-color: red !important;
-    _border-left-color: red !important;
-    _filter: chroma(color=red);
-  }
-  .gh-large .social-count b,
-  .gh-large .social-count i {
-    margin-top: -6px;
-    border-width: 6px;
-  }
-  `,
-  ],
+  `],
   preserveWhitespaces: false,
 })
 export class NtkmeButtonComponent implements OnChanges {
@@ -220,7 +149,6 @@ export class NtkmeButtonComponent implements OnChanges {
   text = '';
   svg: any = {};
   buttonHref: string;
-  labelSuffix = ' on GitHub';
   counterHref: string;
   counter: number;
   counterLabel: string;
