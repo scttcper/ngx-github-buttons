@@ -1,4 +1,19 @@
-# Angular GitHub Buttons
+<div align="center">
+  <img src="https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png" width="400" alt="Angular GitHub Buttons">
+  <br>
+  <h1>ngx-toastr</h1>
+  <br>
+  <a href="https://www.npmjs.com/package/@ctrl/ngx-github-buttons">
+    <img src="https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg" alt="npm">
+  </a> 
+  <a href="https://travis-ci.org/TypeCtrl/ngx-github-buttons">
+    <img src="https://travis-ci.org/TypeCtrl/ngx-github-buttons.svg?branch=master" alt="travis"></a> 
+  <br>
+  DEMO: https://typectrl.github.io/ngx-github-buttons/
+</div>
+<br>
+<br>
+
 GitHub buttons without the iframe, rewritten in Angular.  
 
 Choose from two styles:  
