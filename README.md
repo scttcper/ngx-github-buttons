@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png" width="400" alt="Angular GitHub Buttons">
+  <img src="https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png" width="300" alt="Angular GitHub Buttons">
   <br>
   <h1>ngx-github-buttons</h1>
   <br>
