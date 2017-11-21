@@ -1,5 +1,5 @@
 # Angular GitHub Buttons
-GitHub buttons without the iframe, rewritten in angular.  
+GitHub buttons without the iframe, rewritten in Angular.  
 
 Choose from two styles:  
 - ntkme: https://buttons.github.io/  
