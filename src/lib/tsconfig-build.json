@@ -1,29 +1,30 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "es2015",
     "target": "es2015",
+    "noImplicitAny": false,
     "outDir": "../../dist/packages-dist/es2015",
     "rootDir": ".",
     "sourceMap": true,
     "inlineSources": true,
     "declaration": false,
     "removeComments": true,
-    "lib": ["es2015", "dom"],
+    "strictNullChecks": true,
+    "lib": ["es2015", "dom", "es2015.promise", "es2015.collection", "es2015.iterable"],
     "skipLibCheck": true,
     "moduleResolution": "node"
   },
   "files": [
     "public_api.ts"
   ],
-  "compileOnSave": false,
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "ngx-github-buttons"
+    "flatModuleId": "@ctrl/ngx-github-buttons",
+    "annotationsAs": "decorators"
   }
 }

@@ -68,7 +68,7 @@ import { ButtonService } from '../button.service';
     height: 30px;
   }
   .github-btn-large .gh-btn {
-    padding: 3px 10px 3px 8px;
+    padding: 4px 10px 4px 8px;
     font-size: 16px;
     line-height: 22px;
     border-radius: 4px;
@@ -157,10 +157,7 @@ export class MdoGithubButtonComponent implements OnChanges {
       }
       sub = this.buttonService.repo(this.user, this.repo);
     }
-    sub.subscribe(
-      (d) => this.callback(d),
-      (e) => {},
-    );
+    sub.subscribe((d) => this.callback(d));
   }
   callback(data: any) {
     this.counter = data[this.countAttr];

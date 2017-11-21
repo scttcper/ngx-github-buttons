@@ -1,10 +1,10 @@
 {
   "name": "@ctrl/ngx-github-buttons",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "GitHub Buttons for Angular",
   "main": "./index.umd.js",
-  "module": "./index.es5.js",
-  "es2015": "./index.es2015.js",
+  "module": "./index.js",
+  "es2015": "./es2015/index.js",
   "typings": "./index.d.ts",
   "peerDependencies": {
     "@angular/core": ">=5.0.0 <=6.0.0",

@@ -220,10 +220,7 @@ export class NtkmeButtonComponent implements OnChanges {
       }
       sub = this.buttonService.repo(this.user, this.repo);
     }
-    sub.subscribe(
-      (d) => this.callback(d),
-      (e) => {},
-    );
+    sub.subscribe((d) => this.callback(d));
   }
   callback(data: any) {
     this.counter = data[this.countAttr];

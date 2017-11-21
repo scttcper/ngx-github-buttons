@@ -30,11 +30,6 @@ const GLOBALS = {
   'rxjs/observable/of': 'Rx.Observable',
 };
 
-function createEntry() {
-  return `${process.cwd()}/dist/packages-dist/index.js`;
-}
-
-
 // Constants for running typescript commands
 const NGC = './node_modules/.bin/ngc';
 const TSC_ARGS = (config = 'build') => {
@@ -85,34 +80,15 @@ function generateBundle(input, file, name, format) {
 
 function createUmd() {
   const moduleName = 'ngx-github-buttons';
-  const entry = createEntry();
+  const entry = `${process.cwd()}/dist/packages-dist/es2015/index.js`;
   const file = `${process.cwd()}/dist/packages-dist/index.umd.js`;
   return generateBundle(entry, file, moduleName, 'umd');
-}
-
-function createEs() {
-  const moduleName = 'ngx-github-buttons';
-  const entry = createEntry();
-  const file = `${process.cwd()}/dist/packages-dist/index.js`;
-  return generateBundle(entry, file, moduleName, 'es');
 }
 
 function buildModule() {
   const es2015$ = spawnObservable(NGC, TSC_ARGS());
   const esm$ = spawnObservable(NGC, TSC_ARGS('esm'));
   return Observable.forkJoin(es2015$, esm$);
-}
-
-function createBundles() {
-  return Observable
-    .forkJoin(
-      Observable.from(createEs()),
-      Observable.from(createEs()),
-    );
-}
-
-function buildUmds() {
-  return Observable.from(createUmd());
 }
 
 function copyFilesCore() {
@@ -132,9 +108,8 @@ function copyFilesCore() {
 function buildLibrary() {
   return Observable
     .forkJoin(buildModule())
-    .switchMap(() => createBundles())
     .switchMap(() => copyFilesCore())
-    .switchMap(() => buildUmds());
+    .switchMap(() => Observable.from(createUmd()));
 }
 
 buildLibrary().subscribe(

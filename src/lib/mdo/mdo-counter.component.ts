@@ -54,21 +54,19 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
     border-width: 5px 5px 5px 0;
     border-right-color: #d4d4d4;
   }
-  .gh-count {
-    padding: 3px 10px 3px 8px;
+  .github-btn-large.gh-count {
+    padding: 4px 10px 4px 8px;
     font-size: 16px;
     line-height: 22px;
     border-radius: 4px;
-  }
-  .gh-count {
     margin-left: 6px;
   }
-  .gh-count:before {
+  .github-btn-large.gh-count:before {
     left: -5px;
     margin-top: -6px;
     border-width: 6px 6px 6px 0;
   }
-  .gh-count:after {
+  .github-btn-large.gh-count:after {
     left: -6px;
     margin-top: -7px;
     border-width: 7px 7px 7px 0;
