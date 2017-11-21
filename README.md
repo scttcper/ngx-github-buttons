@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png" width="400" alt="Angular GitHub Buttons">
   <br>
-  <h1>ngx-toastr</h1>
+  <h1>ngx-github-buttons</h1>
   <br>
   <a href="https://www.npmjs.com/package/@ctrl/ngx-github-buttons">
     <img src="https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg" alt="npm">
