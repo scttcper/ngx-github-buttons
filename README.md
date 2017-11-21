@@ -8,8 +8,6 @@
   </a> 
   <a href="https://travis-ci.org/TypeCtrl/ngx-github-buttons">
     <img src="https://travis-ci.org/TypeCtrl/ngx-github-buttons.svg?branch=master" alt="travis"></a> 
-  <br>
-  DEMO: https://typectrl.github.io/ngx-github-buttons/
 </div>
 <br>
 <br>
