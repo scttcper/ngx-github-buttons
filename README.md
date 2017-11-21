@@ -12,9 +12,9 @@
 <br>
 <br>
 
-GitHub buttons without the iframe, rewritten in Angular.  
+> GitHub buttons without the iframe, rewritten in Angular.  
 
-Choose from two styles:  
+__Choose from two styles__:  
 - ntkme: https://buttons.github.io/  
 - mdo: https://ghbtns.com/  
 
