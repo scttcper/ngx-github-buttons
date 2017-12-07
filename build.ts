@@ -1,12 +1,15 @@
 /* tslint:disable:import-blacklist */
-
 // build based on
 // https://github.com/angular/angularfire2/blob/master/tools/build.js
 import { spawn } from 'child_process';
+import * as copyfiles from 'copy';
 import { rollup } from 'rollup';
+import * as filesize from 'rollup-plugin-filesize';
 import * as sourcemaps from 'rollup-plugin-sourcemaps';
 import { Observable } from 'rxjs';
 import { copy } from 'fs-extra';
+
+const pkg = require(`${process.cwd()}/package.json`);
 
 // Rollup globals
 const GLOBALS = {
@@ -43,16 +46,20 @@ function spawnObservable(command: string, args: string[]) {
   return Observable.create(observer => {
     const cmd = spawn(command, args);
     observer.next(''); // hack to kick things off, not every command will have a stdout
-    cmd.stdout.on('data', (data) => { observer.next(data.toString()); });
-    cmd.stderr.on('data', (data) => { observer.error(data.toString()); });
-    cmd.on('close', (data) => { observer.complete(); });
+    cmd.stdout.on('data', data => {
+      observer.next(data.toString());
+    });
+    cmd.stderr.on('data', data => {
+      observer.error(data.toString());
+    });
+    cmd.on('close', data => {
+      observer.complete();
+    });
   });
 }
 
 function generateBundle(input, file, name, format) {
-  const plugins = [
-    sourcemaps(),
-  ];
+  const plugins = [sourcemaps(), filesize()];
   return rollup({
     input,
     external: Object.keys(GLOBALS),
@@ -78,9 +85,19 @@ function generateBundle(input, file, name, format) {
   });
 }
 
+function createEs(target) {
+  const name = '@ctrl/ngx-github-buttons';
+  return generateBundle(
+    `${process.cwd()}/dist/${target}/index.js`,
+    `${process.cwd()}/dist/packages-dist/index.${target}.js`,
+    name,
+    'es',
+  );
+}
+
 function createUmd() {
   const moduleName = 'ngx-github-buttons';
-  const entry = `${process.cwd()}/dist/packages-dist/es2015/index.js`;
+  const entry = `${process.cwd()}/dist/es2015/index.js`;
   const file = `${process.cwd()}/dist/packages-dist/index.umd.js`;
   return generateBundle(entry, file, moduleName, 'umd');
 }
@@ -91,25 +108,64 @@ function buildModule() {
   return Observable.forkJoin(es2015$, esm$);
 }
 
+function createBundles() {
+  return Observable.forkJoin(
+    Observable.from(createUmd()),
+    Observable.from(createEs('es2015')),
+    Observable.from(createEs('es5')),
+  );
+}
+
 function copyFilesCore() {
-  return Observable
-    .forkJoin(
-      Observable.from(copy(
+  const copyAll: ((s: string, s1: string) => any) = Observable.bindCallback(
+    copyfiles,
+  );
+  return Observable.forkJoin(
+    copyAll(
+      `${process.cwd()}/dist/es2015/**/*.d.ts`,
+      `${process.cwd()}/dist/packages-dist`,
+    ),
+    Observable.from(
+      copy(
+        `${process.cwd()}/dist/es2015/index.metadata.json`,
+        `${process.cwd()}/dist/packages-dist/index.metadata.json`,
+      ),
+    ),
+    Observable.from(
+      copy(
         `${process.cwd()}/README.md`,
         `${process.cwd()}/dist/packages-dist/README.md`,
-      )),
-      Observable.from(copy(
+      ),
+    ),
+    Observable.from(
+      copy(
         `${process.cwd()}/src/lib/package.json`,
         `${process.cwd()}/dist/packages-dist/package.json`,
-      )),
-    );
+      ),
+    ),
+  );
+}
+
+function getVersions() {
+  const paths = [`${process.cwd()}/dist/packages-dist/package.json`];
+  return paths.map(path => require(path)).map(pkgs => pkgs.version);
+}
+
+function verifyVersions() {
+  const versions = getVersions();
+  console.log(versions);
+  versions.map(version => {
+    if (version !== pkg.version) {
+      throw new Error('Versions mistmatch');
+    }
+  });
 }
 
 function buildLibrary() {
-  return Observable
-    .forkJoin(buildModule())
+  return Observable.forkJoin(buildModule())
     .switchMap(() => copyFilesCore())
-    .switchMap(() => Observable.from(createUmd()));
+    .switchMap(() => Observable.from(createBundles()))
+    .do(() => verifyVersions());
 }
 
 buildLibrary().subscribe(
