@@ -163,8 +163,8 @@ function verifyVersions() {
 
 function buildLibrary() {
   return Observable.forkJoin(buildModule())
-    .switchMap(() => copyFilesCore())
     .switchMap(() => Observable.from(createBundles()))
+    .switchMap(() => copyFilesCore())
     .do(() => verifyVersions());
 }
 
