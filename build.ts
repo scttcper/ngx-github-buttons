@@ -97,7 +97,7 @@ function createEs(target) {
 
 function createUmd() {
   const moduleName = 'ngx-github-buttons';
-  const entry = `${process.cwd()}/dist/es2015/index.js`;
+  const entry = `${process.cwd()}/dist/es5/index.js`;
   const file = `${process.cwd()}/dist/packages-dist/index.umd.js`;
   return generateBundle(entry, file, moduleName, 'umd');
 }
