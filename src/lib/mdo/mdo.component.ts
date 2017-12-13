@@ -39,6 +39,7 @@ import { ButtonService } from '../button.service';
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#eeeeee', GradientType=0);
     background-repeat: no-repeat;
     border: 1px solid #d5d5d5;
+    display: inline-block;
   }
   .gh-btn:hover,
   .gh-btn:focus {
@@ -65,7 +66,7 @@ import { ButtonService } from '../button.service';
     background-repeat: no-repeat;
   }
   .github-btn-large {
-    height: 30px;
+    height: 32px;
   }
   .github-btn-large .gh-btn {
     padding: 4px 10px 4px 8px;
