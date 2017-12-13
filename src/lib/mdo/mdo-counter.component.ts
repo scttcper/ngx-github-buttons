@@ -18,6 +18,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
     white-space: nowrap;
     cursor: pointer;
     border-radius: 3px;
+    display: inline-block;
   }
   .gh-count {
     position: relative;
