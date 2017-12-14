@@ -7,9 +7,7 @@ import { MdoButtonModule } from '../lib/mdo/mdo.module';
 import { NtkmeButtonModule } from '../lib/ntkme/ntkme.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,

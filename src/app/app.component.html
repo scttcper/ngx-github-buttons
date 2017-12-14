@@ -33,7 +33,10 @@
         <label class="form-check-label">
           <input [(ngModel)]="style" value="ntkme" type="radio" name="style" class="form-check-input"> ntkme
           <br>
-          <ntkme-github-button size="large" user="angular" repo="ngx-github-buttons">
+          <ntkme-github-button size="large"
+            user="typectrl"
+            repo="ngx-github-buttons"
+          >
           </ntkme-github-button>
         </label>
       </div>
@@ -43,7 +46,11 @@
         <label class="form-check-label">
           <input [(ngModel)]="style" value="mdo" type="radio" name="style" class="form-check-input"> mdo
           <br>
-          <mdo-github-button size="large" user="angular" repo="ngx-github-buttons">
+          <mdo-github-button
+            size="large"
+            user="typectrl"
+            repo="ngx-github-buttons"
+          >
           </mdo-github-button>
         </label>
       </div>
@@ -62,9 +69,13 @@
           <input [(ngModel)]="type" type="radio" name="type" value="follow" class="form-check-input"> Follow
           <br>
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'" type="follow" user="angular" size="large">
+            <mdo-github-button *ngIf="style === 'mdo'"
+              type="follow" user="typectrl" size="large"
+            >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'" type="follow" user="angular" size="large">
+            <ntkme-github-button *ngIf="style === 'ntkme'"
+              type="follow" user="typectrl" size="large"
+            >
             </ntkme-github-button>
           </span>
         </label>
@@ -76,9 +87,19 @@
           <input [(ngModel)]="type" type="radio" name="type" value="watch" class="form-check-input"> Watch
           <br>
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'" type="watch" user="angular" repo="ngx-github-buttons" size="large">
+            <mdo-github-button *ngIf="style === 'mdo'"
+              type="watch"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'" type="watch" user="angular" repo="ngx-github-buttons" size="large">
+            <ntkme-github-button *ngIf="style === 'ntkme'"
+              type="watch"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </ntkme-github-button>
           </span>
         </label>
@@ -90,9 +111,19 @@
           <input [(ngModel)]="type" type="radio" name="type" value="star" class="form-check-input"> Star
           <br>
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'" type="star" user="angular" repo="ngx-github-buttons" size="large">
+            <mdo-github-button *ngIf="style === 'mdo'"
+              type="star"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'" type="star" user="angular" repo="ngx-github-buttons" size="large">
+            <ntkme-github-button *ngIf="style === 'ntkme'"
+              type="star"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </ntkme-github-button>
           </span>
         </label>
@@ -104,9 +135,19 @@
           <input [(ngModel)]="type" type="radio" name="type" value="fork" class="form-check-input"> Fork
           <br>
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'" type="fork" user="angular" repo="ngx-github-buttons" size="large">
+            <mdo-github-button *ngIf="style === 'mdo'"
+              type="fork"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'" type="fork" user="angular" repo="ngx-github-buttons" size="large">
+            <ntkme-github-button *ngIf="style === 'ntkme'"
+              type="fork"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </ntkme-github-button>
           </span>
         </label>
@@ -118,7 +159,12 @@
           <input [(ngModel)]="type" type="radio" name="type" value="issue" class="form-check-input"> Issue
           <br>
           <span aria-hidden="true">
-            <ntkme-github-button *ngIf="style === 'ntkme'" type="issue" user="angular" repo="ngx-github-buttons" size="large">
+            <ntkme-github-button *ngIf="style === 'ntkme'"
+              type="issue"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </ntkme-github-button>
           </span>
         </label>
@@ -130,7 +176,12 @@
           <input [(ngModel)]="type" type="radio" name="type" value="download" class="form-check-input"> Download
           <br>
           <span aria-hidden="true">
-            <ntkme-github-button *ngIf="style === 'ntkme'" type="download" user="angular" repo="ngx-github-buttons" size="large">
+            <ntkme-github-button *ngIf="style === 'ntkme'"
+              type="download"
+              user="typectrl"
+              repo="ngx-github-buttons"
+              size="large"
+            >
             </ntkme-github-button>
           </span>
         </label>
