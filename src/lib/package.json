@@ -1,11 +1,8 @@
 {
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@ctrl/ngx-github-buttons",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "GitHub Buttons for Angular",
-  "main": "./index.umd.js",
-  "module": "./index.es5.js",
-  "es2015": "./index.es2015.js",
-  "typings": "./index.d.ts",
   "peerDependencies": {
     "@angular/core": ">=5.0.0 <=6.0.0",
     "@angular/common": ">=5.0.0 <=6.0.0",
@@ -16,5 +13,11 @@
   "homepage": "https://github.com/TypeCtrl/ngx-github-buttons",
   "license": "MIT",
   "bugs": "https://github.com/TypeCtrl/ngx-github-buttons/issues",
-  "keywords": ["ngx", "github", "buttons", "star", "like", "follow"]
+  "keywords": ["ngx", "github", "buttons", "star", "like", "follow"],
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    },
+    "dest": "../../dist"
+  }
 }
