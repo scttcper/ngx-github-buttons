@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng-packagr -p src/lib/package.json && node prepublish.js",
-    "build:ghpages": "ng build --prod --baseHref='/ngx-toastr/' && ng build --prod --app 1 --output-hashing=false --no-progress",
+    "build:ghpages": "ng build --prod --baseHref='/ngx-github-buttons/' && ng build --prod --app 1 --output-hashing=false --no-progress",
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
     "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
     "build:prerender-ghpages": "npm run build:ghpages && npm run webpack:server && npm run generate:prerender",
