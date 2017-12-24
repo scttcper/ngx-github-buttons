@@ -1,5 +1,5 @@
 /* tslint:disable:max-line-length */
-import { Component, OnChanges, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { ButtonService } from '../button.service';

@@ -3,7 +3,6 @@ import { async, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 
 import { MdoButtonModule } from '../lib/mdo/mdo.module';
-import { NtkmeButtonModule } from '../lib/ntkme/ntkme.module';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
