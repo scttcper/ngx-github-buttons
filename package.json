@@ -12,7 +12,6 @@
     "build:prerender-ghpages": "npm run build:ghpages && npm run webpack:server && npm run generate:prerender",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "generate:prerender": "cd dist && node prerender",
-    "ghpages": "ng build --prod --build-optimizer --aot --no-progress --baseHref='/ngx-github-buttons/'",
     "publish": "cd dist && npm publish --access public",
     "bundlesize": "npx bundlesize",
     "test": "ng test",
