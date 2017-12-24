@@ -1,9 +1,10 @@
-import { TestBed, async } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { APP_BASE_HREF } from '@angular/common';
+import { async, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { MdoButtonModule } from '../lib/mdo/mdo.module';
 import { NtkmeButtonModule } from '../lib/ntkme/ntkme.module';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,11 +13,14 @@ describe('AppComponent', () => {
         AppComponent,
       ],
       imports: [
-        FormsModule,
+        RouterModule.forRoot([]),
         MdoButtonModule,
-        NtkmeButtonModule,
       ],
-    }).compileComponents();
+      providers: [
+        { provide: APP_BASE_HREF, useValue : '/' },
+      ]
+    });
+    TestBed.compileComponents();
   }));
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);

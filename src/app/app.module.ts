@@ -1,20 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { MdoButtonModule } from '../lib/mdo/mdo.module';
 import { NtkmeButtonModule } from '../lib/ntkme/ntkme.module';
+import { AppComponent } from './app.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DemoComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'my-app' }),
+    RouterModule.forRoot([
+      { path: '', component: DemoComponent, pathMatch: 'full' },
+    ]),
     FormsModule,
     MdoButtonModule,
     NtkmeButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
