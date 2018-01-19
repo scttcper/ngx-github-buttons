@@ -1,12 +1,12 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@ctrl/ngx-github-buttons",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "GitHub Buttons for Angular",
   "peerDependencies": {
-    "@angular/core": ">=5.0.0 <=6.0.0",
-    "@angular/common": ">=5.0.0 <=6.0.0",
-    "rxjs": "^5.5.0"
+    "@angular/core": ">=5.0.0",
+    "@angular/common": ">=5.0.0",
+    "rxjs": ">=5.5.0"
   },
   "author": "Scott Cooper <scttcper@gmail.com> (https://github.com/scttcper)",
   "repository": "https://github.com/TypeCtrl/ngx-github-buttons.git",
