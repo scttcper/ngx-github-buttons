@@ -63,3 +63,8 @@ or
 Compilicated. This project is MIT licensed, but each set of buttons have their own license which must be respected.  
 The mdo buttons are Licensed [Apache 2](https://github.com/mdo/github-buttons/blob/master/LICENSE.md)  
 The ntkme buttons are Licensed [BSD 2-clause](https://github.com/ntkme/github-buttons/blob/master/LICENSE.md)  
+
+---
+
+> GitHub [@scttcper](https://github.com/scttcper) &nbsp;&middot;&nbsp;
+> Twitter [@scttcper](https://twitter.com/scttcper)
