@@ -1,7 +1,7 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@ctrl/ngx-github-buttons",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "GitHub Buttons for Angular",
   "peerDependencies": {
     "@angular/core": ">=5.2.0",
