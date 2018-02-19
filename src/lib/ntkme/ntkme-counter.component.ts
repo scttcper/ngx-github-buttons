@@ -67,14 +67,14 @@ import {
     border-right-color: #c8e1ff;
   }
   .social-count i {
-    margin-right: -1.5px;
+    margin-right: -1px;
     border-right-color: #fff;
   }
   .gh-large.social-count {
     padding: 0 7px;
     margin-left: 7px;
     font-size: 11px;
-    height: 26px;
+    height: 28px;
     line-height: 26px;
   }
   .gh-large.social-count span {

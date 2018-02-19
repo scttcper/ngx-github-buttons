@@ -93,6 +93,7 @@ const svg = {
     padding: 0 5px;
     line-height: 18px;
     font-size: 11px;
+    white-space: nowrap;
   }
   .gh-btn:focus {
     border-color: #c8e1ff;
@@ -119,7 +120,7 @@ const svg = {
     vertical-align: 1px;
   }
   .gh-large .gh-btn {
-    height: 26px;
+    height: 28px;
     line-height: 26px;
     padding: 0 10px;
     font-size: 12px;
