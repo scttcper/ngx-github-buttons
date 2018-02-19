@@ -56,7 +56,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     border-right-color: #d4d4d4;
   }
   .github-btn-large.gh-count {
-    padding: 4px 10px 4px 8px;
+    padding: 4px 8px 4px 8px;
     font-size: 16px;
     line-height: 22px;
     border-radius: 4px;
