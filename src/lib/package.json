@@ -2,7 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@ctrl/ngx-github-buttons",
   "version": "2.0.0",
-  "description": "GitHub Buttons for Angular",
+  "description": "GitHub Buttons for Angular. Star, Like, Follow and more",
   "peerDependencies": {
     "@angular/core": ">=5.2.0",
     "@angular/common": ">=5.2.0",
