@@ -4,9 +4,9 @@
   "version": "1.0.9",
   "description": "GitHub Buttons for Angular",
   "peerDependencies": {
-    "@angular/core": ">=5.2.0",
-    "@angular/common": ">=5.2.0",
-    "rxjs": ">=5.5.0"
+    "@angular/core": ">=6.0.0",
+    "@angular/common": ">=6.0.0",
+    "rxjs": ">=6.0.0"
   },
   "sideEffects": false,
   "author": "Scott Cooper <scttcper@gmail.com> (https://github.com/scttcper)",
