@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 mb-3">
+    <div class="col-12">
       <h2 class="mb-4">Install</h2>
       <pre>npm install @ctrl/ngx-github-buttons</pre>
     </div>
@@ -229,17 +229,17 @@
       </div>
       <p><strong>Import the module</strong></p>
       <div class="form-group">
-        <pre>import {{ '{' }} <ng-template [ngIf]="style === 'ntkme'">NtkmeButtonModule</ng-template><ng-template [ngIf]="style === 'mdo'">MdoButtonModule</ng-template> {{ '}' }} from <span style="color:blueviolet">'@ctrl/ngx-github-buttons'</span>;
+        <pre>import {{ '{' }}<ng-template [ngIf]="style === 'ntkme'">NtkmeButtonModule</ng-template><ng-template [ngIf]="style === 'mdo'">MdoButtonModule</ng-template>{{ '}' }} from <span style="color:blueviolet">'@ctrl/ngx-github-buttons'</span>;
         </pre>
       </div>
       <p><strong>Use the component</strong></p>
       <div class="form-group">
         <pre><ng-template [ngIf]="style === 'ntkme'">&lt;ntkme-github-button</ng-template><ng-template [ngIf]="style === 'mdo'">&lt;mdo-github-button</ng-template><ng-template [ngIf]="size === 'large'">
   size=<span style="color:blueviolet">"{{ size }}"</span></ng-template><ng-template [ngIf]="count">
-  count=<span style="color:blueviolet">"{{ count }}"</span></ng-template>
+  [count]=<span style="color:blueviolet">"{{ count }}"</span></ng-template>
   user=<span style="color:blueviolet">"{{ user || 'angular' }}"</span><ng-template [ngIf]="type !== 'follow'">
   repo=<span style="color:blueviolet">"{{ repo || 'angular' }}"</span></ng-template><ng-template [ngIf]="style === 'ntkme' && standardIcon">
-  standardIcon="true"</ng-template>
+  [standardIcon]="true"</ng-template>
   <ng-template [ngIf]="type !== 'star'">type=<span style="color:blueviolet">"{{ type }}"</span></ng-template>>
 <ng-template [ngIf]="style === 'ntkme'">&lt;/ntkme-github-button></ng-template><ng-template [ngIf]="style === 'mdo'">&lt;/mdo-github-button></ng-template>
         </pre>

@@ -11,15 +11,15 @@ import { DemoComponent } from './demo/demo.component';
 @NgModule({
   declarations: [AppComponent, DemoComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app' }),
+    BrowserModule,
     RouterModule.forRoot([
-      { path: '', component: DemoComponent, pathMatch: 'full' },
+      { path: '', component: DemoComponent },
+      { path: '**', component: DemoComponent },
     ]),
     FormsModule,
     MdoButtonModule,
     NtkmeButtonModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

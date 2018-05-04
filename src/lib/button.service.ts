@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ButtonService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
   user(user: string): Observable<any> {
-    return this.httpClient
-      .get<any>('https://api.github.com/users/' + user);
+    return this.httpClient.get<any>('https://api.github.com/users/' + user);
   }
   repo(user: string, repo: string): Observable<any> {
-    return this.httpClient
-      .get<any>('https://api.github.com/repos/' + user + '/' + repo);
+    return this.httpClient.get<any>(
+      'https://api.github.com/repos/' + user + '/' + repo,
+    );
   }
 }
