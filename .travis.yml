@@ -10,7 +10,7 @@ script:
   - npm run test:ci
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - npm run build:prerender-ghpages
+  - npm run ghpages
 deploy:
   provider: pages
   skip_cleanup: true
