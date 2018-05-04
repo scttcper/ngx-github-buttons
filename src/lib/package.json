@@ -4,8 +4,8 @@
   "version": "2.0.0",
   "description": "GitHub Buttons for Angular",
   "peerDependencies": {
-    "@angular/core": ">=6.0.0",
-    "@angular/common": ">=6.0.0",
+    "@angular/core": ">=5.2.0",
+    "@angular/common": ">=5.2.0",
     "rxjs": ">=6.0.0"
   },
   "sideEffects": false,
