@@ -8,7 +8,6 @@
     "@angular/common": ">=5.2.0",
     "rxjs": ">=6.0.0"
   },
-  "sideEffects": false,
   "author": "Scott Cooper <scttcper@gmail.com> (https://github.com/scttcper)",
   "repository": "https://github.com/TypeCtrl/ngx-github-buttons.git",
   "homepage": "https://github.com/TypeCtrl/ngx-github-buttons",
