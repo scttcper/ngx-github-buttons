@@ -69,10 +69,6 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/bundles/ctrl-ngx-github-buttons.umd.js",
-      "maxSize": "6 kB"
-    },
-    {
       "path": "./dist/bundles/ctrl-ngx-github-buttons.umd.min.js",
       "maxSize": "5 kB"
     },
