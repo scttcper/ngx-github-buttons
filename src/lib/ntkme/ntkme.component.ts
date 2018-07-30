@@ -115,6 +115,7 @@ const svg = {
     fill: currentColor;
     height: 14px;
     top: 2px;
+    vertical-align: initial;
   }
   .gh-btn span {
     vertical-align: 1px;
