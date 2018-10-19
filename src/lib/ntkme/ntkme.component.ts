@@ -134,7 +134,6 @@ const svg = {
     top: 4px;
   }
   `],
-  preserveWhitespaces: false,
 })
 export class NtkmeButtonComponent implements OnChanges {
   /** GitHub username that owns the repo */

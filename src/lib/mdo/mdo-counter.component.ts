@@ -74,7 +74,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: false,
 })
 
 export class MdoCounterComponent {

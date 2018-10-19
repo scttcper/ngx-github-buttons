@@ -80,7 +80,6 @@ import { ButtonService } from '../button.service';
   }
   `,
   ],
-  preserveWhitespaces: false,
 })
 export class MdoGithubButtonComponent implements OnChanges {
   /** GitHub username that owns the repo */

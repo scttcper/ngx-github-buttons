@@ -82,7 +82,6 @@ import {
   }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  preserveWhitespaces: false,
 })
 export class NtkmeCounterComponent {
   @Input() large = false;
