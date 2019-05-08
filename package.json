@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ts-node build.ts",
+    "build": "ts-node -O '{\"module\": \"commonjs\"}' build.ts",
     "ghpages": "ng build --prod --no-progress --baseHref='/ngx-github-buttons/'",
     "publish": "cd dist && npm publish --access public",
     "test": "ng test --watch=false --browsers=ChromeCI",
