@@ -1,6 +1,7 @@
 {
   "name": "@ctrl/ngx-github-buttons",
   "version": "0.0.0-placeholder",
+  "repository": "typectrl/ngx-github-buttons",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
