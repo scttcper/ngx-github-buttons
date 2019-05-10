@@ -93,7 +93,7 @@ export class MdoGithubButtonComponent implements OnChanges {
   /** Optional flag for using a larger button */
   @Input() size: 'none' | 'large' = 'none';
   text = '';
-  mainButton: any = {
+  mainButton: Record<string, boolean> = {
     'github-btn': true,
   };
   buttonHref: string;
