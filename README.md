@@ -1,27 +1,19 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png" width="300" alt="Angular GitHub Buttons">
-  <br>
-  <h1>ngx-github-buttons</h1>
-  <p>GitHub buttons without the iframe, for Angular</p>
-  <a href="https://www.npmjs.com/package/@ctrl/ngx-github-buttons">
-    <img src="https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg" alt="npm">
-  </a> 
-  <a href="https://travis-ci.org/TypeCtrl/ngx-github-buttons">
-    <img src="https://travis-ci.org/TypeCtrl/ngx-github-buttons.svg?branch=master" alt="travis"></a> 
-</div>
-<br>
-<br>
+![ngx-github-buttons](https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png)
+
+# ngx-github-buttons [![npm](https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg)](https://www.npmjs.com/package/@ctrl/ngx-github-buttons) [![CircleCI](https://circleci.com/gh/TypeCtrl/ngx-github-buttons.svg?style=svg)](https://circleci.com/gh/TypeCtrl/ngx-github-buttons) 
+
+> GitHub buttons without the iframe, for Angular
+
+### Demo
+https://ngx-github-buttons.netlify.com/   
 
 __Choose from two styles__:  
 - ntkme: https://buttons.github.io/  
 - mdo: https://ghbtns.com/  
 
-### Demo
-https://typectrl.github.io/ngx-github-buttons/  
-
 ### Install
-```sh
-npm i @ctrl/ngx-github-buttons
+```console
+npm install @ctrl/ngx-github-buttons
 ```
 
 ### Use
