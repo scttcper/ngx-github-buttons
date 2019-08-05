@@ -1,12 +1,7 @@
 /* tslint:disable:max-line-length */
-import {
-  Component,
-  Input,
-  OnChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { ButtonService } from '../button.service';
+import { getRepo, getUser } from '../util';
 
 const svg = {
   follow: {
@@ -61,12 +56,14 @@ const svg = {
       </svg>
       <span> {{ text }}</span>
     </a>
-    <ntkme-counter *ngIf="count && loaded"
-      [count]="counter"
-      [large]="this.size === 'large'"
-      [counterLabel]="counterLabel"
-      [counterHref]="counterHref"
-    ></ntkme-counter>
+    <ng-template [ngIf]="count && loaded">
+      <ntkme-counter
+        [count]="counter"
+        [large]="this.size === 'large'"
+        [counterLabel]="counterLabel"
+        [counterHref]="counterHref"
+      ></ntkme-counter>
+    </ng-template>
   </div>
   `,
   styles: [`
@@ -156,7 +153,6 @@ export class NtkmeButtonComponent implements OnChanges {
   counterLabel: string;
   countAttr: string;
   loaded = false;
-  constructor(private buttonService: ButtonService) {}
 
   ngOnChanges() {
     const iconType = this.standardIcon ? 'follow' : this.type;
@@ -212,16 +208,16 @@ export class NtkmeButtonComponent implements OnChanges {
   }
   fetch() {
     this.loaded = false;
-    let sub: Observable<any>;
+    let sub: Promise<any>;
     if (this.type === 'follow') {
-      sub = this.buttonService.user(this.user);
+      sub = getUser(this.user);
     } else {
       if (!this.repo) {
         return;
       }
-      sub = this.buttonService.repo(this.user, this.repo);
+      sub = getRepo(this.user, this.repo);
     }
-    sub.subscribe((d) => this.callback(d));
+    sub.then((d) => this.callback(d));
   }
   callback(data: any) {
     this.counter = data[this.countAttr];

@@ -1,8 +1,7 @@
 /* tslint:disable:max-line-length */
 import { Component, Input, OnChanges } from '@angular/core';
-import { Observable } from 'rxjs';
 
-import { ButtonService } from '../button.service';
+import { getRepo, getUser } from '../util';
 
 @Component({
   selector: 'mdo-github-button',
@@ -13,12 +12,14 @@ import { ButtonService } from '../button.service';
       <span class="gh-ico" aria-hidden="true"></span>
       <span class="gh-text">{{ text }}</span>
     </a>
-    <mdo-counter *ngIf="count && loaded"
-      [count]="counter"
-      [large]="this.size === 'large'"
-      [counterLabel]="counterLabel"
-      [counterHref]="counterHref"
-    ></mdo-counter>
+    <ng-template [ngIf]="count && loaded">
+      <mdo-counter
+        [count]="counter"
+        [large]="this.size === 'large'"
+        [counterLabel]="counterLabel"
+        [counterHref]="counterHref"
+      ></mdo-counter>
+    </ng-template>
   </div>
   `,
   styles: [`
@@ -102,7 +103,6 @@ export class MdoGithubButtonComponent implements OnChanges {
   counterLabel: string;
   countAttr: string;
   loaded = false;
-  constructor(private buttonService: ButtonService) {}
 
   ngOnChanges() {
     this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/';
@@ -148,16 +148,16 @@ export class MdoGithubButtonComponent implements OnChanges {
   }
   fetch() {
     this.loaded = false;
-    let sub: Observable<any>;
+    let sub: Promise<any>;
     if (this.type === 'follow') {
-      sub = this.buttonService.user(this.user);
+      sub = getUser(this.user);
     } else {
       if (!this.repo) {
         return;
       }
-      sub = this.buttonService.repo(this.user, this.repo);
+      sub = getRepo(this.user, this.repo);
     }
-    sub.subscribe((d) => this.callback(d));
+    sub.then((d) => this.callback(d));
   }
   callback(data: any) {
     this.counter = data[this.countAttr];
