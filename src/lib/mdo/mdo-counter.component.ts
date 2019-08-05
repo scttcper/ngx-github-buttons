@@ -73,7 +73,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     border-width: 7px 7px 7px 0;
   }
   `],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class MdoCounterComponent {

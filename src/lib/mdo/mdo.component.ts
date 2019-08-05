@@ -12,7 +12,7 @@ import { getRepo, getUser } from '../util';
       <span class="gh-ico" aria-hidden="true"></span>
       <span class="gh-text">{{ text }}</span>
     </a>
-    <ng-template [ngIf]="count && loaded">
+    <ng-template [ngIf]="count && counter !== undefined">
       <mdo-counter
         [count]="counter"
         [large]="this.size === 'large'"
@@ -102,7 +102,6 @@ export class MdoGithubButtonComponent implements OnChanges {
   counter: number;
   counterLabel: string;
   countAttr: string;
-  loaded = false;
 
   ngOnChanges() {
     this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/';
@@ -147,7 +146,6 @@ export class MdoGithubButtonComponent implements OnChanges {
     }
   }
   fetch() {
-    this.loaded = false;
     let sub: Promise<any>;
     if (this.type === 'follow') {
       sub = getUser(this.user);
@@ -161,6 +159,5 @@ export class MdoGithubButtonComponent implements OnChanges {
   }
   callback(data: any) {
     this.counter = data[this.countAttr];
-    this.loaded = true;
   }
 }

@@ -56,7 +56,7 @@ const svg = {
       </svg>
       <span> {{ text }}</span>
     </a>
-    <ng-template [ngIf]="count && loaded">
+    <ng-template [ngIf]="count && counter !== undefined">
       <ntkme-counter
         [count]="counter"
         [large]="this.size === 'large'"
@@ -152,7 +152,6 @@ export class NtkmeButtonComponent implements OnChanges {
   counter: number;
   counterLabel: string;
   countAttr: string;
-  loaded = false;
 
   ngOnChanges() {
     const iconType = this.standardIcon ? 'follow' : this.type;
@@ -207,7 +206,6 @@ export class NtkmeButtonComponent implements OnChanges {
     }
   }
   fetch() {
-    this.loaded = false;
     let sub: Promise<any>;
     if (this.type === 'follow') {
       sub = getUser(this.user);
@@ -221,6 +219,5 @@ export class NtkmeButtonComponent implements OnChanges {
   }
   callback(data: any) {
     this.counter = data[this.countAttr];
-    this.loaded = true;
   }
 }

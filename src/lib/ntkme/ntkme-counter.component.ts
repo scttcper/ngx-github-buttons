@@ -77,7 +77,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     vertical-align: 0;
   }
   `],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NtkmeCounterComponent {
   @Input() large = false;
