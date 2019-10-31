@@ -6,7 +6,7 @@ import { getRepo, getUser } from '../util';
 @Component({
   selector: 'mdo-github-button',
   template: `
-  <div [ngClass]="mainButton">
+  <div class="{{ mainButton }}">
     <a class="gh-btn" [href]="buttonHref" target="_blank"
       [attr.aria-label]="text + ' on GitHub'">
       <span class="gh-ico" aria-hidden="true"></span>
