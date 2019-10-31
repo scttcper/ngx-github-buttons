@@ -74,7 +74,6 @@ import { Component, Input } from '@angular/core';
   }
   `],
 })
-
 export class MdoCounterComponent {
   @Input() large = false;
   @Input() count: number;

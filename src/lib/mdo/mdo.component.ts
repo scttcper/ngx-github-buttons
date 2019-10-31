@@ -94,9 +94,7 @@ export class MdoGithubButtonComponent implements OnChanges {
   /** Optional flag for using a larger button */
   @Input() size: 'none' | 'large' = 'none';
   text = '';
-  mainButton: Record<string, boolean> = {
-    'github-btn': true,
-  };
+  mainButton = '';
   buttonHref: string;
   counterHref: string;
   counter: number;
@@ -105,18 +103,18 @@ export class MdoGithubButtonComponent implements OnChanges {
 
   ngOnChanges() {
     this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/';
-    this.mainButton['github-btn-large'] = this.size === 'large';
+    let mainButton = this.size === 'large' ? 'github-btn github-btn-large' : 'github-btn';
     // Add the class, change the text label, set count link href
     switch (this.type) {
       case 'watch':
-        this.mainButton['github-watchers'] = true;
+        mainButton += ' github-watchers';
         this.text = 'Watch';
         this.countAttr = 'subscribers_count';
         this.counterHref =
           'https://github.com/' + this.user + '/' + this.repo + '/watchers';
         break;
       case 'star':
-        this.mainButton['github-stargazers'] = true;
+        mainButton += ' github-stargazers';
         this.text = 'Star';
         this.counterLabel = ' stargazers';
         this.countAttr = 'stargazers_count';
@@ -125,7 +123,7 @@ export class MdoGithubButtonComponent implements OnChanges {
           'https://github.com/' + this.user + '/' + this.repo + '/stargazers';
         break;
       case 'fork':
-        this.mainButton['github-forks'] = true;
+        mainButton += ' github-forks';
         this.text = 'Fork';
         this.counterLabel = ' forks';
         this.countAttr = 'network_count';
@@ -133,7 +131,7 @@ export class MdoGithubButtonComponent implements OnChanges {
         this.counterHref = 'https://github.com/' + this.user + '/' + this.repo + '/network';
         break;
       case 'follow':
-        this.mainButton['github-me'] = true;
+        mainButton += ' github-me';
         this.text = 'Follow @' + this.user;
         this.counterLabel = ' followers';
         this.countAttr = 'followers';
@@ -141,6 +139,7 @@ export class MdoGithubButtonComponent implements OnChanges {
         this.counterHref = 'https://github.com/' + this.user + '/followers';
         break;
     }
+    this.mainButton = mainButton;
     if (this.count && this.user) {
       this.fetch();
     }
