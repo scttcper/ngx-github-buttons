@@ -37,7 +37,7 @@
     "@types/fs-extra": "8.0.1",
     "@types/jasmine": "3.5.0",
     "@types/node": "12.12.22",
-    "codelyzer": "5.2.0",
+    "codelyzer": "5.2.1",
     "del": "5.1.0",
     "fs-extra": "8.1.0",
     "jasmine-core": "3.5.0",
