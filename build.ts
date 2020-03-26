@@ -1,20 +1,16 @@
-import { copySync } from 'fs-extra';
-import { build } from 'ng-packagr';
+import { copyFileSync } from 'fs';
 import { join } from 'path';
-import * as del from 'del';
+import { build } from 'ng-packagr';
 
 
 async function main() {
-  // cleanup dist
-  del.sync(join(process.cwd(), '/dist'));
-
   // make common
   await build({
     project: join(process.cwd(), 'src/lib/package.json'),
   });
 
-  copySync('README.md', join(process.cwd(), 'dist/README.md'));
-  copySync('LICENSE', join(process.cwd(), 'dist/LICENSE'));
+  copyFileSync('README.md', join(process.cwd(), 'dist/README.md'));
+  copyFileSync('LICENSE', join(process.cwd(), 'dist/LICENSE'));
 }
 
 main()
