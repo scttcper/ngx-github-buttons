@@ -5,8 +5,6 @@ import { Component, Input } from '@angular/core';
   template: `
   <a class="social-count" [class.gh-large]="large" [href]="counterHref"
     [attr.aria-label]="(count | number) + counterLabel + ' on GitHub'">
-    <b></b>
-    <i></i>
     <span>{{ count | number }}</span>
   </a>
   `,
@@ -24,10 +22,11 @@ import { Component, Input } from '@angular/core';
     vertical-align: middle;
     cursor: pointer;
     border: 1px solid #d1d2d3;
-    border-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    border-left: 0;
     position: relative;
     background-color: #fff;
-    margin-left: 5px;
     font-size: 10px;
     height: 20px;
     padding: 0 5px;
@@ -39,36 +38,8 @@ import { Component, Input } from '@angular/core';
   .social-count:focus {
     border-color: #c8e1ff;
   }
-  .social-count b,
-  .social-count i {
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    display: block;
-    width: 0;
-    height: 0;
-    margin-top: -4px;
-    border: 4px solid transparent;
-  }
-  .gh-large.social-count b,
-  .gh-large.social-count i {
-    margin-top: -6px;
-    border-width: 6px;
-  }
-  .social-count b {
-    margin-right: 0;
-    border-right-color: #d1d2d3;
-  }
-  .social-count:focus b {
-    border-right-color: #c8e1ff;
-  }
-  .social-count i {
-    margin-right: -1px;
-    border-right-color: #fff;
-  }
   .gh-large.social-count {
     padding: 0 7px;
-    margin-left: 7px;
     font-size: 11px;
     height: 28px;
     line-height: 26px;
