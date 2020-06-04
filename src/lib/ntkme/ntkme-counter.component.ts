@@ -39,7 +39,7 @@ import { Component, Input } from '@angular/core';
     border-color: #c8e1ff;
   }
   .gh-large.social-count {
-    padding: 0 7px;
+    padding: 0 10px;
     font-size: 11px;
     height: 28px;
     line-height: 26px;
