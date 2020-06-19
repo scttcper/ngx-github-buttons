@@ -59,7 +59,7 @@ import { getRepo, getUser } from '../util';
         font-size: 12px;
         line-height: 20px;
         text-decoration: none;
-        background-color: #edeff2;
+        background-color: #fafbfc;
         transition: none;
         z-index: 1;
         outline: none;
@@ -80,15 +80,6 @@ import { getRepo, getUser } from '../util';
       .gh-btn:active {
         background-color: #e9ecef;
         background-image: none;
-        border-color: #afb1b2;
-        box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
-      }
-      .gh-btn:hover {
-        background-color: #e6ebf1;
-        background-image: linear-gradient(to bottom, #f0f3f6, #dce3ec);
-        background-position: -0.5em;
-        border-color: #9fa4a9;
-        border-color: rgba(27, 31, 35, 0.35);
       }
       .gh-octicon {
         list-style-type: none;
