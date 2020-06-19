@@ -15,7 +15,7 @@ import { getRepo, getUser } from '../util';
     <ng-template [ngIf]="count && counter !== undefined">
       <mdo-counter
         [count]="counter"
-        [large]="this.size === 'large'"
+        [large]="size === 'large'"
         [counterLabel]="counterLabel"
         [counterHref]="counterHref"
       ></mdo-counter>

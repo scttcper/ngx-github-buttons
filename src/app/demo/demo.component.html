@@ -5,7 +5,7 @@
       <pre>npm install @ctrl/ngx-github-buttons</pre>
     </div>
   </div>
-  <hr>
+  <hr />
   <div class="row">
     <div class="col-12">
       <h2 class="mb-4">Pick a style</h2>
@@ -15,12 +15,16 @@
     <div class="col-6 col-md-4 col-lg-2">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="style" value="ntkme" type="radio" name="style" class="form-check-input"> ntkme
-          <br>
-          <ntkme-github-button size="large"
-            user="typectrl"
-            repo="ngx-github-buttons"
-          >
+          <input
+            [(ngModel)]="style"
+            value="ntkme"
+            type="radio"
+            name="style"
+            class="form-check-input"
+          />
+          ntkme
+          <br />
+          <ntkme-github-button size="large" user="typectrl" repo="ngx-github-buttons">
           </ntkme-github-button>
         </label>
       </div>
@@ -28,38 +32,59 @@
     <div class="col-6 col-md-4 col-lg-2">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="style" value="mdo" type="radio" name="style" class="form-check-input"> mdo
-          <br>
-          <mdo-github-button
-            size="large"
-            user="typectrl"
-            repo="ngx-github-buttons"
-          >
+          <input
+            [(ngModel)]="style"
+            value="mdo"
+            type="radio"
+            name="style"
+            class="form-check-input"
+          />
+          mdo
+          <br />
+          <mdo-github-button size="large" user="typectrl" repo="ngx-github-buttons">
           </mdo-github-button>
         </label>
       </div>
     </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            [(ngModel)]="style"
+            value="gh"
+            type="radio"
+            name="style"
+            class="form-check-input"
+          />
+          gh
+          <br />
+          <gh-button size="large" user="typectrl" repo="ngx-github-buttons"></gh-button>
+        </label>
+      </div>
+    </div>
   </div>
-  <hr>
-  <div class="row">
+  <hr />
+  <div class="row" *ngIf="style !== 'gh'">
     <div class="col-12">
       <h2 class="mb-4">Choose a button</h2>
     </div>
-  </div>
-  <div class="row mb-3">
     <div class="col-6 col-md-4 col-lg-3 mb-3">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="type" type="radio" name="type" value="follow" class="form-check-input"> Follow
-          <br>
+          <input
+            [(ngModel)]="type"
+            type="radio"
+            name="type"
+            value="follow"
+            class="form-check-input"
+          />
+          Follow
+          <br />
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'"
-              type="follow"
-              user="typectrl"
-              size="large"
-            >
+            <mdo-github-button *ngIf="style === 'mdo'" type="follow" user="typectrl" size="large">
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'"
+            <ntkme-github-button
+              *ngIf="style === 'ntkme'"
               type="follow"
               user="typectrl"
               size="large"
@@ -72,17 +97,26 @@
     <div class="col-6 col-md-4 col-lg-3 mb-3">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="type" type="radio" name="type" value="watch" class="form-check-input"> Watch
-          <br>
+          <input
+            [(ngModel)]="type"
+            type="radio"
+            name="type"
+            value="watch"
+            class="form-check-input"
+          />
+          Watch
+          <br />
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'"
+            <mdo-github-button
+              *ngIf="style === 'mdo'"
               type="watch"
               user="typectrl"
               repo="ngx-github-buttons"
               size="large"
             >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'"
+            <ntkme-github-button
+              *ngIf="style === 'ntkme'"
               type="watch"
               user="typectrl"
               repo="ngx-github-buttons"
@@ -96,17 +130,26 @@
     <div class="col-6 col-md-4 col-lg-3 mb-3">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="type" type="radio" name="type" value="star" class="form-check-input"> Star
-          <br>
+          <input
+            [(ngModel)]="type"
+            type="radio"
+            name="type"
+            value="star"
+            class="form-check-input"
+          />
+          Star
+          <br />
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'"
+            <mdo-github-button
+              *ngIf="style === 'mdo'"
               type="star"
               user="typectrl"
               repo="ngx-github-buttons"
               size="large"
             >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'"
+            <ntkme-github-button
+              *ngIf="style === 'ntkme'"
               type="star"
               user="typectrl"
               repo="ngx-github-buttons"
@@ -120,17 +163,26 @@
     <div class="col-6 col-md-4 col-lg-3 mb-3">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="type" type="radio" name="type" value="fork" class="form-check-input"> Fork
-          <br>
+          <input
+            [(ngModel)]="type"
+            type="radio"
+            name="type"
+            value="fork"
+            class="form-check-input"
+          />
+          Fork
+          <br />
           <span aria-hidden="true">
-            <mdo-github-button *ngIf="style === 'mdo'"
+            <mdo-github-button
+              *ngIf="style === 'mdo'"
               type="fork"
               user="typectrl"
               repo="ngx-github-buttons"
               size="large"
             >
             </mdo-github-button>
-            <ntkme-github-button *ngIf="style === 'ntkme'"
+            <ntkme-github-button
+              *ngIf="style === 'ntkme'"
               type="fork"
               user="typectrl"
               repo="ngx-github-buttons"
@@ -144,10 +196,18 @@
     <div class="col-6 col-md-4 col-lg-3 mb-3" *ngIf="style === 'ntkme'">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="type" type="radio" name="type" value="issue" class="form-check-input"> Issue
-          <br>
+          <input
+            [(ngModel)]="type"
+            type="radio"
+            name="type"
+            value="issue"
+            class="form-check-input"
+          />
+          Issue
+          <br />
           <span aria-hidden="true">
-            <ntkme-github-button *ngIf="style === 'ntkme'"
+            <ntkme-github-button
+              *ngIf="style === 'ntkme'"
               type="issue"
               user="typectrl"
               repo="ngx-github-buttons"
@@ -161,10 +221,18 @@
     <div class="col-6 col-md-4 col-lg-3 mb-3" *ngIf="style === 'ntkme'">
       <div class="form-check">
         <label class="form-check-label">
-          <input [(ngModel)]="type" type="radio" name="type" value="download" class="form-check-input"> Download
-          <br>
+          <input
+            [(ngModel)]="type"
+            type="radio"
+            name="type"
+            value="download"
+            class="form-check-input"
+          />
+          Download
+          <br />
           <span aria-hidden="true">
-            <ntkme-github-button *ngIf="style === 'ntkme'"
+            <ntkme-github-button
+              *ngIf="style === 'ntkme'"
               type="download"
               user="typectrl"
               repo="ngx-github-buttons"
@@ -175,30 +243,60 @@
         </label>
       </div>
     </div>
+    <hr />
   </div>
-  <hr>
   <div class="row">
     <div class="col-12 col-sm-6 col-md-4">
       <h2>Options</h2>
       <div class="form-group">
-        <input id="search" [(ngModel)]="user" type="text" maxlength="39" placeholder=":user" name="user" class="form-control mb-1" autocomplete="off">
-        <input [(ngModel)]="repo" type="text" maxlength="100" placeholder=":repo" name="repo" class="form-control" autocomplete="off">
+        <input
+          id="search"
+          [(ngModel)]="user"
+          type="text"
+          maxlength="39"
+          placeholder=":user"
+          name="user"
+          class="form-control mb-1"
+          autocomplete="off"
+        />
+        <input
+          [(ngModel)]="repo"
+          type="text"
+          maxlength="100"
+          placeholder=":repo"
+          name="repo"
+          class="form-control"
+          autocomplete="off"
+        />
       </div>
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="size" value="large" (change)="changeSize()">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="size"
+              value="large"
+              (change)="changeSize()"
+            />
             Large button
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" [(ngModel)]="count" name="count" type="checkbox"> Show count
+            <input class="form-check-input" [(ngModel)]="count" name="count" type="checkbox" /> Show
+            count
           </label>
         </div>
         <div class="form-check" [class.disabled]="style === 'mdo'">
           <label class="form-check-label">
-            <input class="form-check-input" [(ngModel)]="standardIcon" type="checkbox" [disabled]="style === 'mdo'"> Standard icon
+            <input
+              class="form-check-input"
+              [(ngModel)]="standardIcon"
+              type="checkbox"
+              [disabled]="style === 'mdo'"
+            />
+            Standard icon
           </label>
         </div>
       </div>
@@ -214,7 +312,7 @@
           [user]="user || 'angular'"
           [repo]="repo || 'angular'"
           [type]="type"
-          >
+        >
         </mdo-github-button>
         <ntkme-github-button
           *ngIf="style === 'ntkme'"
@@ -224,25 +322,17 @@
           [repo]="repo || 'angular'"
           [type]="type"
           [standardIcon]="standardIcon"
-          >
+        >
         </ntkme-github-button>
-      </div>
-      <p><strong>Import the module</strong></p>
-      <div class="form-group">
-        <pre>import {{ '{' }}<ng-template [ngIf]="style === 'ntkme'">NtkmeButtonModule</ng-template><ng-template [ngIf]="style === 'mdo'">MdoButtonModule</ng-template>{{ '}' }} from <span style="color:blueviolet">'@ctrl/ngx-github-buttons'</span>;
-        </pre>
-      </div>
-      <p><strong>Use the component</strong></p>
-      <div class="form-group">
-        <pre><ng-template [ngIf]="style === 'ntkme'">&lt;ntkme-github-button</ng-template><ng-template [ngIf]="style === 'mdo'">&lt;mdo-github-button</ng-template><ng-template [ngIf]="size === 'large'">
-  size=<span style="color:blueviolet">"{{ size }}"</span></ng-template><ng-template [ngIf]="count">
-  [count]=<span style="color:blueviolet">"{{ count }}"</span></ng-template>
-  user=<span style="color:blueviolet">"{{ user || 'angular' }}"</span><ng-template [ngIf]="type !== 'follow'">
-  repo=<span style="color:blueviolet">"{{ repo || 'angular' }}"</span></ng-template><ng-template [ngIf]="style === 'ntkme' && standardIcon">
-  [standardIcon]="true"</ng-template>
-  <ng-template [ngIf]="type !== 'star'">type=<span style="color:blueviolet">"{{ type }}"</span></ng-template>>
-<ng-template [ngIf]="style === 'ntkme'">&lt;/ntkme-github-button></ng-template><ng-template [ngIf]="style === 'mdo'">&lt;/mdo-github-button></ng-template>
-        </pre>
+        <gh-button
+          *ngIf="style === 'gh'"
+          [count]="count"
+          [user]="user || 'angular'"
+          [repo]="repo || 'angular'"
+          [type]="type"
+          [standardIcon]="standardIcon"
+        >
+        </gh-button>
       </div>
     </div>
   </div>

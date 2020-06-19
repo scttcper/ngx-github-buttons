@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
-  styles: []
+  styles: [],
 })
-export class DemoComponent  {
+export class DemoComponent {
   style = 'ntkme';
   type = 'star';
   size = 'none';
@@ -16,5 +16,4 @@ export class DemoComponent  {
   changeSize() {
     this.size = this.size === 'none' ? 'large' : 'none';
   }
-
 }

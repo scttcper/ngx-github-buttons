@@ -1,3 +1,6 @@
+export * from './gh/gh.module';
+export * from './gh/gh.component';
+export * from './gh/gh-counter.component';
 export * from './ntkme/ntkme.module';
 export * from './ntkme/ntkme.component';
 export * from './ntkme/ntkme-counter.component';

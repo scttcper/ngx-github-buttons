@@ -3,8 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { MdoButtonModule } from '../lib/mdo/mdo.module';
-import { NtkmeButtonModule } from '../lib/ntkme/ntkme.module';
+import { MdoButtonModule, NtkmeButtonModule, GhButtonModule } from '../lib/public_api';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 
@@ -19,6 +18,7 @@ import { DemoComponent } from './demo/demo.component';
     FormsModule,
     MdoButtonModule,
     NtkmeButtonModule,
+    GhButtonModule,
   ],
   bootstrap: [AppComponent],
 })

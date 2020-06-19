@@ -59,7 +59,7 @@ const svg = {
     <ng-template [ngIf]="count && counter !== undefined">
       <ntkme-counter
         [count]="counter"
-        [large]="this.size === 'large'"
+        [large]="size === 'large'"
         [counterLabel]="counterLabel"
         [counterHref]="counterHref"
       ></ntkme-counter>
