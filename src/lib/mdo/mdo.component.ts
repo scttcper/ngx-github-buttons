@@ -95,11 +95,11 @@ export class MdoGithubButtonComponent implements OnChanges {
   @Input() size: 'none' | 'large' = 'none';
   text = '';
   mainButton = '';
-  buttonHref: string = '';
-  counterHref: string = '';
+  buttonHref = '';
+  counterHref = '';
   counter?: number;
-  counterLabel: string = '';
-  countAttr: string = '';
+  counterLabel = '';
+  countAttr = '';
 
   ngOnChanges() {
     this.buttonHref = 'https://github.com/' + this.user + '/' + this.repo + '/';

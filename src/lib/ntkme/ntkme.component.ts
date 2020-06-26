@@ -152,11 +152,11 @@ export class NtkmeButtonComponent implements OnChanges {
   @Input() standardIcon = false;
   text = '';
   svg: any = {};
-  buttonHref: string = '';
-  counterHref: string = '';
+  buttonHref = '';
+  counterHref = '';
   counter?: number;
-  counterLabel: string = '';
-  countAttr: string = '';
+  counterLabel = '';
+  countAttr = '';
 
   ngOnChanges() {
     const iconType = this.standardIcon ? 'follow' : this.type;

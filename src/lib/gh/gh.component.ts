@@ -118,11 +118,11 @@ export class GhButtonComponent implements OnChanges {
   /** Use the github logo as the icon */
   @Input() standardIcon = false;
   text = '';
-  buttonHref: string = '';
-  counterHref: string = '';
+  buttonHref = '';
+  counterHref = '';
   counter?: number;
-  counterLabel: string = '';
-  countAttr: string = '';
+  counterLabel = '';
+  countAttr = '';
 
   ngOnChanges() {
     this.text = 'Star';
