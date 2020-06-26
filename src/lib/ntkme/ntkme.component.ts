@@ -139,9 +139,9 @@ const svg = {
 })
 export class NtkmeButtonComponent implements OnChanges {
   /** GitHub username that owns the repo */
-  @Input() user: string;
+  @Input() user!: string;
   /** GitHub repository to pull the forks and watchers counts */
-  @Input() repo: string;
+  @Input() repo!: string;
   /** Type of button to show */
   @Input() type: 'follow' | 'watch' | 'star' | 'fork' | 'issue' | 'download' = 'star';
   /** Show the optional watchers or forks count */
@@ -152,11 +152,11 @@ export class NtkmeButtonComponent implements OnChanges {
   @Input() standardIcon = false;
   text = '';
   svg: any = {};
-  buttonHref: string;
-  counterHref: string;
-  counter: number;
-  counterLabel: string;
-  countAttr: string;
+  buttonHref: string = '';
+  counterHref: string = '';
+  counter?: number;
+  counterLabel: string = '';
+  countAttr: string = '';
 
   ngOnChanges() {
     const iconType = this.standardIcon ? 'follow' : this.type;
@@ -223,6 +223,6 @@ export class NtkmeButtonComponent implements OnChanges {
     sub.then((d) => this.callback(d));
   }
   callback(data: any) {
-    this.counter = data[this.countAttr];
+    this.counter = data[this.countAttr ?? ''];
   }
 }

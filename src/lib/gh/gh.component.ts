@@ -108,9 +108,9 @@ import { getRepo, getUser } from '../util';
 })
 export class GhButtonComponent implements OnChanges {
   /** GitHub username that owns the repo */
-  @Input() user: string;
+  @Input() user!: string;
   /** GitHub repository to pull the forks and watchers counts */
-  @Input() repo: string;
+  @Input() repo!: string;
   /** Type of button to show */
   @Input() type: 'follow' | 'watch' | 'star' | 'fork' | 'issue' | 'download' = 'star';
   /** Show the optional watchers or forks count */
@@ -118,11 +118,11 @@ export class GhButtonComponent implements OnChanges {
   /** Use the github logo as the icon */
   @Input() standardIcon = false;
   text = '';
-  buttonHref: string;
-  counterHref: string;
-  counter: number;
-  counterLabel: string;
-  countAttr: string;
+  buttonHref: string = '';
+  counterHref: string = '';
+  counter?: number;
+  counterLabel: string = '';
+  countAttr: string = '';
 
   ngOnChanges() {
     this.text = 'Star';
@@ -148,6 +148,6 @@ export class GhButtonComponent implements OnChanges {
     sub.then(d => this.callback(d));
   }
   callback(data: any) {
-    this.counter = data[this.countAttr];
+    this.counter = data[this.countAttr ?? ''];
   }
 }

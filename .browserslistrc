@@ -6,3 +6,4 @@
 #   npx browserslist
 
 > 5%
+not IE 9-11

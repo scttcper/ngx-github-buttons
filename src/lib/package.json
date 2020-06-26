@@ -4,8 +4,8 @@
   "version": "0.0.0-placeholder",
   "description": "GitHub Buttons for Angular. Star, Like, Follow and more",
   "peerDependencies": {
-    "@angular/core": ">=9.0.0-0",
-    "@angular/common": ">=9.0.0-0"
+    "@angular/core": ">=10.0.0-0",
+    "@angular/common": ">=10.0.0-0"
   },
   "author": "Scott Cooper <scttcper@gmail.com> (https://github.com/scttcper)",
   "repository": "typectrl/ngx-github-buttons",

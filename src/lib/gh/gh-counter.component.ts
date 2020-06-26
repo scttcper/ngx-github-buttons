@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
     <a
       class="social-count"
       [href]="counterHref"
-      [attr.aria-label]="(count | number) + counterLabel + ' on GitHub'"
+      [attr.aria-label]="count + counterLabel + ' on GitHub'"
     >
       <span>{{ count | number }}</span>
     </a>
@@ -47,7 +47,7 @@ import { Component, Input } from '@angular/core';
   ],
 })
 export class GhCounterComponent {
-  @Input() count: number;
-  @Input() counterLabel: string;
-  @Input() counterHref: string;
+  @Input() count!: number;
+  @Input() counterLabel!: string;
+  @Input() counterHref!: string;
 }
