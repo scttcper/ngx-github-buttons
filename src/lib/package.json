@@ -9,7 +9,7 @@
   },
   "author": "Scott Cooper <scttcper@gmail.com> (https://github.com/scttcper)",
   "repository": "typectrl/ngx-github-buttons",
-  "homepage": "https://github.com/TypeCtrl/ngx-github-buttons",
+  "homepage": "https://ngx-github-buttons.typectrl.vercel.app",
   "license": "MIT",
   "bugs": "https://github.com/TypeCtrl/ngx-github-buttons/issues",
   "keywords": ["ngx", "github", "buttons", "star", "like", "follow"],

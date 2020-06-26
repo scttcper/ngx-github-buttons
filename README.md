@@ -5,7 +5,7 @@
 > GitHub buttons without the iframe, for Angular
 
 ### Demo
-https://ngx-github-buttons.netlify.com/   
+https://ngx-github-buttons.typectrl.vercel.app  
 
 __Choose from two styles__:  
 - ntkme: https://buttons.github.io/  
