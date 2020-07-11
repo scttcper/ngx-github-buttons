@@ -12,7 +12,7 @@ import { getRepo, getUser } from '../util';
           version="1.1"
           width="16"
           height="16"
-          viewBox="'0 0 16 16"
+          viewBox="0 0 16 16"
           class="gh-octicon"
           aria-hidden="true"
         >
