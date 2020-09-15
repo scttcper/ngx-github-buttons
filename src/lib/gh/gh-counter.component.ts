@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'gh-counter',
   template: `
     <a
-      class="social-count"
+      class="counter"
       [href]="counterHref"
       [attr.aria-label]="count + counterLabel + ' on GitHub'"
     >
@@ -13,7 +13,7 @@ import { Component, Input } from '@angular/core';
   `,
   styles: [
     `
-      .social-count {
+      .counter {
         display: inline-block;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
           Apple Color Emoji, Segoe UI Emoji;
@@ -35,12 +35,12 @@ import { Component, Input } from '@angular/core';
         border-bottom-right-radius: 6px;
         box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04), inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
       }
-      .social-count:hover {
+      .counter:hover {
         text-decoration: none;
         color: #0366d6;
         cursor: pointer;
       }
-      .social-count:focus {
+      .counter:focus {
         border-color: #c8e1ff;
       }
     `,
