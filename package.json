@@ -2,7 +2,7 @@
   "name": "@ctrl/ngx-github-buttons",
   "version": "0.0.0-placeholder",
   "repository": "typectrl/ngx-github-buttons",
-  "homepage": "https://ngx-github-buttons.typectrl.vercel.app",
+  "homepage": "https://ngx-github-buttons.vercel.app",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
