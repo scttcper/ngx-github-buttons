@@ -12,9 +12,9 @@ import { DemoComponent } from './demo/demo.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', component: DemoComponent },
-      { path: '**', component: DemoComponent },
-    ]),
+    { path: '', component: DemoComponent },
+    { path: '**', component: DemoComponent },
+], { relativeLinkResolution: 'legacy' }),
     FormsModule,
     MdoButtonModule,
     NtkmeButtonModule,
