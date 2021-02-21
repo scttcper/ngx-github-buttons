@@ -299,6 +299,16 @@
             Standard icon
           </label>
         </div>
+        <br>
+        <div class="form-group">
+          <label>Select target</label>
+          <select class="form-control" [(ngModel)]="target">
+            <option value="_blank">Blank</option>
+            <option value="_self">Self</option>
+            <option value="_parent">Parent</option>
+            <option value="_top">Top</option>
+          </select>
+        </div>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-8">
@@ -312,6 +322,7 @@
           [user]="user || 'angular'"
           [repo]="repo || 'angular'"
           [type]="type"
+          [target]="target"
         >
         </mdo-github-button>
         <ntkme-github-button
@@ -322,6 +333,7 @@
           [repo]="repo || 'angular'"
           [type]="type"
           [standardIcon]="standardIcon"
+          [target]="target"
         >
         </ntkme-github-button>
         <gh-button
@@ -331,6 +343,7 @@
           [repo]="repo || 'angular'"
           [type]="type"
           [standardIcon]="standardIcon"
+          [target]="target"
         >
         </gh-button>
       </div>

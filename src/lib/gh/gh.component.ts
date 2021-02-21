@@ -7,7 +7,8 @@ import { getRepo, getUser } from '../util';
   selector: 'gh-button',
   template: `
     <div>
-      <a [href]="buttonHref" class="gh-btn" [attr.aria-label]="text + ' on GitHub'">
+      <a [href]="buttonHref" class="gh-btn" [attr.aria-label]="text + ' on GitHub'"
+      [target]="this.target">
         <svg
           version="1.1"
           width="16"
@@ -117,6 +118,13 @@ export class GhButtonComponent implements OnChanges {
   @Input() count = false;
   /** Use the github logo as the icon */
   @Input() standardIcon = false;
+  /** Specifies where to open the linked github URL. */
+  @Input() target:
+    '_blank'  // Opens the linked document in a new window or tab
+  | '_self' // Opens the linked document in the same frame as it was clicked (this is default)
+  | '_parent' //Opens the linked document in the parent frame
+  | '_top'  // Opens the linked document in the full body of the window
+  = '_self'
   text = '';
   buttonHref = '';
   counterHref = '';

@@ -47,7 +47,7 @@ const svg = {
   template: `
   <div [class.gh-large]="this.size === 'large'">
     <a [href]="buttonHref" class="gh-btn"
-      [attr.aria-label]="text + ' on GitHub'">
+      [attr.aria-label]="text + ' on GitHub'" [target]="this.target">
       <svg version="1.1"
         [attr.width]="svg.width" [attr.height]="svg.height"
         [attr.viewBox]="'0 0 ' + svg.width + ' ' + svg.height"
@@ -150,6 +150,13 @@ export class NtkmeButtonComponent implements OnChanges {
   @Input() size: 'none' | 'large' = 'none';
   /** Use the github logo as the icon */
   @Input() standardIcon = false;
+  /** Specifies where to open the linked github URL. */
+  @Input() target:
+    '_blank'  // Opens the linked document in a new window or tab
+  | '_self' // Opens the linked document in the same frame as it was clicked (this is default)
+  | '_parent' //Opens the linked document in the parent frame
+  | '_top'  // Opens the linked document in the full body of the window
+  = '_self'
   text = '';
   svg: any = {};
   buttonHref = '';
