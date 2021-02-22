@@ -47,7 +47,7 @@ const svg = {
   template: `
   <div [class.gh-large]="this.size === 'large'">
     <a [href]="buttonHref" class="gh-btn"
-      [attr.aria-label]="text + ' on GitHub'" [target]="this.target">
+      [attr.aria-label]="text + ' on GitHub'" [target]="target">
       <svg version="1.1"
         [attr.width]="svg.width" [attr.height]="svg.height"
         [attr.viewBox]="'0 0 ' + svg.width + ' ' + svg.height"

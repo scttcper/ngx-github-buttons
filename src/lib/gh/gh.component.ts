@@ -8,7 +8,7 @@ import { getRepo, getUser } from '../util';
   template: `
     <div>
       <a [href]="buttonHref" class="gh-btn" [attr.aria-label]="text + ' on GitHub'"
-      [target]="this.target">
+      [target]="target">
         <svg
           version="1.1"
           width="16"

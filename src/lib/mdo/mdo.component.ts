@@ -7,7 +7,7 @@ import { getRepo, getUser } from '../util';
   selector: 'mdo-github-button',
   template: `
     <div class="{{ mainButton }}">
-      <a class="gh-btn" [href]="buttonHref" [target]="this.target" [attr.aria-label]="text + ' on GitHub'">
+      <a class="gh-btn" [href]="buttonHref" [target]="target" [attr.aria-label]="text + ' on GitHub'">
         <span class="gh-ico" aria-hidden="true"></span>
         <span class="gh-text">{{ text }}</span>
       </a>
