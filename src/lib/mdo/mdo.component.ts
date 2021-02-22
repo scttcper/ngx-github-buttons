@@ -7,7 +7,7 @@ import { getRepo, getUser } from '../util';
   selector: 'mdo-github-button',
   template: `
     <div class="{{ mainButton }}">
-      <a class="gh-btn" [href]="buttonHref" target="_blank" [attr.aria-label]="text + ' on GitHub'">
+      <a class="gh-btn" [href]="buttonHref" [target]="target" [attr.aria-label]="text + ' on GitHub'">
         <span class="gh-ico" aria-hidden="true"></span>
         <span class="gh-text">{{ text }}</span>
       </a>
@@ -93,6 +93,13 @@ export class MdoGithubButtonComponent implements OnChanges {
   @Input() count = false;
   /** Optional flag for using a larger button */
   @Input() size: 'none' | 'large' = 'none';
+  /** Specifies where to open the linked github URL. */
+  @Input() target:
+    '_blank'  // Opens the linked document in a new window or tab
+  | '_self' // Opens the linked document in the same frame as it was clicked (this is default)
+  | '_parent' //Opens the linked document in the parent frame
+  | '_top'  // Opens the linked document in the full body of the window
+  = '_self'
   text = '';
   mainButton = '';
   buttonHref = '';

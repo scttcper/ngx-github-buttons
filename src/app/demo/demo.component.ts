@@ -12,6 +12,7 @@ export class DemoComponent {
   repo = '';
   count = false;
   standardIcon = false;
+  target:  '_blank'| '_self' | '_parent' | '_top' = '_self';
   changeSize() {
     this.size = this.size === 'none' ? 'large' : 'none';
   }
