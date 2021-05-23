@@ -3,11 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'gh-counter',
   template: `
-    <a
-      class="counter"
-      [href]="counterHref"
-      [attr.aria-label]="count + counterLabel + ' on GitHub'"
-    >
+    <a class="counter" [href]="counterHref" [attr.aria-label]="count + counterLabel + ' on GitHub'">
       <span>{{ count | number }}</span>
     </a>
   `,
