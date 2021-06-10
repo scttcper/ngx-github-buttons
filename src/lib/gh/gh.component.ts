@@ -1,4 +1,4 @@
-/* tslint:disable:max-line-length */
+/* eslint-disable max-len */
 import { Component, Input, OnChanges } from '@angular/core';
 
 import { getRepo, getUser } from '../util';
@@ -6,9 +6,13 @@ import { getRepo, getUser } from '../util';
 @Component({
   selector: 'gh-button',
   template: `
-    <div>
-      <a [href]="buttonHref" class="gh-btn" [attr.aria-label]="text + ' on GitHub'"
-      [target]="target">
+    <div class="gh-wrapper">
+      <a
+        [href]="buttonHref"
+        class="gh-btn"
+        [attr.aria-label]="text + ' on GitHub'"
+        [target]="target"
+      >
         <svg
           version="1.1"
           width="16"
@@ -35,6 +39,13 @@ import { getRepo, getUser } from '../util';
   `,
   styles: [
     `
+      :host {
+        display: inline-block;
+      }
+      .gh-wrapper {
+        display: flex;
+        align-items: center;
+      }
       .gh-btn {
         display: inline-block;
         list-style-type: none;
@@ -120,11 +131,10 @@ export class GhButtonComponent implements OnChanges {
   @Input() standardIcon = false;
   /** Specifies where to open the linked github URL. */
   @Input() target:
-    '_blank'  // Opens the linked document in a new window or tab
-  | '_self' // Opens the linked document in the same frame as it was clicked (this is default)
-  | '_parent' // Opens the linked document in the parent frame
-  | '_top'  // Opens the linked document in the full body of the window
-  = '_self';
+    | '_blank' // Opens the linked document in a new window or tab
+    | '_self' // Opens the linked document in the same frame as it was clicked (this is default)
+    | '_parent' // Opens the linked document in the parent frame
+    | '_top' = '_self'; // Opens the linked document in the full body of the window
   text = '';
   buttonHref = '';
   counterHref = '';

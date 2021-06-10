@@ -1,4 +1,4 @@
-/* tslint:disable:max-line-length */
+/* eslint-disable max-len */
 import { Component, Input, OnChanges } from '@angular/core';
 
 import { getRepo, getUser } from '../util';
