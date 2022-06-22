@@ -115,9 +115,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngx-github-buttons",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
   }
 }
