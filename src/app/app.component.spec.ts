@@ -12,7 +12,7 @@ describe('AppComponent', () => {
         AppComponent,
       ],
       imports: [
-        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
+        RouterModule.forRoot([], {}),
         NtkmeButtonModule,
       ],
       providers: [
