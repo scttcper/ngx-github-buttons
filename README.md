@@ -1,4 +1,4 @@
-![ngx-github-buttons](https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png)
+![ngx-github-buttons](https://raw.githubusercontent.com/scttcper/ngx-github-buttons/master/src/assets/share.png)
 
 # ngx-github-buttons [![npm](https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg)](https://www.npmjs.com/package/@ctrl/ngx-github-buttons)
 
