@@ -1,6 +1,6 @@
 ![ngx-github-buttons](https://raw.githubusercontent.com/typectrl/ngx-github-buttons/master/src/assets/share.png)
 
-# ngx-github-buttons [![npm](https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg)](https://www.npmjs.com/package/@ctrl/ngx-github-buttons) [![CircleCI](https://circleci.com/gh/TypeCtrl/ngx-github-buttons.svg?style=svg)](https://circleci.com/gh/TypeCtrl/ngx-github-buttons) 
+# ngx-github-buttons [![npm](https://img.shields.io/npm/v/@ctrl/ngx-github-buttons.svg)](https://www.npmjs.com/package/@ctrl/ngx-github-buttons)
 
 > GitHub buttons without the iframe, for Angular
 
